@@ -1,0 +1,18 @@
+rails --version 2.3.5
+haml
+jrails
+texticle
+searchlogic
+formtastic
+colored
+will_paginate --version 2.3.12
+geokit
+authlogic
+compass-colors
+configatron
+declarative_authorization
+zeke-monkey_patches --source gems.github.com
+friendly_id
+paperclip
+aws-s3
+RedCloth
