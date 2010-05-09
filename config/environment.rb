@@ -20,6 +20,7 @@ Rails::Initializer.run do |config|
   config.gem "httparty"
   config.gem 'gchartrb', :lib => 'google_chart' 
   config.gem 'colored'
+  config.gem 'wordnik'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -42,3 +43,4 @@ Rails::Initializer.run do |config|
 end
 
 COLORS = ['29ABE2', 'ED1E79', '8CC63F', '8C6239']
+WORDNIK_API_KEY = "b39ee8d5f05d0f566a0080b4c310ceddf5dc5f7606a616f53"
