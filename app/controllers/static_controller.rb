@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   
   def index
+    # raise params.inspect
     wordnik = Wordnik.new(WORDNIK_API_KEY)
     @words = params[:q].present? ? params[:q].split(",") : %w(dog cat monkey)
     @responses = {}

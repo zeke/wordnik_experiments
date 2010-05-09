@@ -1,1 +1,7 @@
 = generate_chart @responses
+
+- form_tag({:action => "index"}, :method => :get) do
+  = text_field_tag :q, params[:q]
+  = text_field_tag :start_year, params[:start_year]
+  = text_field_tag :end_year, params[:end_year]
+  <input type="submit" value="Save changes">

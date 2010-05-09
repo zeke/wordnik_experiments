@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "static"
   
-  map.search '/:q', :controller => 'static', :action => 'index'
+  # map.search '/:q', :controller => 'static', :action => 'index'
 
   # See how all your routes lay out with "rake routes"
 
