@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  spelling: MyString
+  rank: 1
+
+two:
+  spelling: MyString
+  rank: 1

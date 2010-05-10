@@ -1,4 +1,33 @@
 module ApplicationHelper
+  
+  def page_title
+    "Wordnik Experiments"
+  end
+  
+  def stylesheets
+    screen = %w(blueprint_screen application)
+    # print = %w(print)
+		out = screen.map { |stylesheet| stylesheet_link_tag(stylesheet) }
+    # out << print.map { |stylesheet| stylesheet_link_tag(stylesheet, :media => 'print') }
+    # TODO Add Print and IE stylesheets
+    # out << "<!--[if lt IE 8]>" + stylesheet_link_tag('ie') + "<![endif]-->"
+    out.flatten.join("\n")
+  end
+  
+  def enable_typekit(kit_id)
+    "<script type=\"text/javascript\" src=\"http://use.typekit.com/#{kit_id}.js\"></script>
+    <script type=\"text/javascript\">try{Typekit.load();}catch(e){}</script>"
+  end
+
+  # Be sure to load application.js last!
+  def javascripts
+    out = []
+    out << google_jquery(:local => offline_mode?)
+    out << google_jqueryui(:local => offline_mode?)
+    files = %w(application)
+    out << javascript_include_tag(files.flatten)
+    out.join("\n")
+  end
 
   def generate_chart(responses)    
 

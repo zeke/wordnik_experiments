@@ -1,0 +1,18 @@
+%h1
+  Editing word
+- form_for(@word) do |f|
+= f.error_messages
+%p
+  = f.label :spelling
+  %br
+  = f.text_field :spelling
+%p
+  = f.label :rank
+  %br
+  = f.text_field :rank
+%p
+  = f.submit 'Update'
+- end
+= link_to 'Show', @word
+|
+= link_to 'Back', words_path

@@ -6,5 +6,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+
+protected
+
+  # See README.rdoc for info..
+  helper_method :offline_mode?
+  def offline_mode?
+    ARGV.include?('OFFLINE_MODE') ? true : false
+  end
+
 end

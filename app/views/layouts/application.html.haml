@@ -1,0 +1,25 @@
+!!! Strict
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %title= page_title    
+    = stylesheets
+    = enable_typekit("icp2sxu")    
+    = javascripts
+    = yield(:js_includes)
+    
+  %body
+  
+    #kontainer
+
+      #header
+
+      #main
+          
+        #content
+          = yield(:content) || yield
+
+        #sidebar
+          = yield(:sidebar)
+
+      #footer

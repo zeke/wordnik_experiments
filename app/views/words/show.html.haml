@@ -1,0 +1,11 @@
+%p
+  %b
+    Spelling:
+  = h @word.spelling
+%p
+  %b
+    Rank:
+  = h @word.rank
+= link_to 'Edit', edit_word_path(@word)
+|
+= link_to 'Back', words_path

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  word_id: 1
+  lookup_count: 1
+  favorite_count: 1
+  list_count: 1
+
+two:
+  word_id: 1
+  lookup_count: 1
+  favorite_count: 1
+  list_count: 1

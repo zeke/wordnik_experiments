@@ -1,0 +1,34 @@
+
+- @words.each do |word|
+  %div.word_container{:id => "word_container_#{word.id}"}
+    - css = ["word", cycle("even", "odd")]
+    = link_to_function(word.spelling, "highlightWord('#{word.id}', '#{word.spelling}')", :class => css.join(" "))
+    %div.info.inactive{:id => "info_#{word.id}"}
+      = link_to("&oplus;", "http://www.wordnik.com/words/#{word.spelling}", :class => "wordnik_site", :target => "_blank")
+      = info_pair("Lookups", content_tag(:p, word.lookup_count))
+      = info_pair("Favorites", content_tag(:p, word.favorite_count))
+      = info_pair("Lists", content_tag(:p, word.list_count))
+      = info_pair("Comments", content_tag(:p, word.comment_count))
+    %div.inactive{:id => "definition_#{word.id}", :class => "definition"}
+
+/ %table
+/   %thead
+/     %tr
+/       %th Word
+/       %th Frequency (Princeton)
+/       %th Lookups
+/       %th Favorites
+/       %th Lists
+/       %th Comments
+/ 
+/   - @words.each do |word|
+/     %tbody
+/       %tr
+/         %td= word.spelling
+/         %td= word.rank
+/         %td= word.lookup_count
+/         %td= word.favorite_count
+/         %td= word.list_count
+/         %td= word.comment_count
+/         
+

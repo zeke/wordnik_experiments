@@ -1,0 +1,239 @@
+form div.input {
+  margin: 0 0 5px 0; }
+  form div.input label {
+    font-weight: normal; }
+  form div.input select {
+    width: 100%;
+    border: 1px solid #CCC;
+    margin: .2em 0; }
+
+form#search_form ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  form#search_form ol li {
+    padding: 2px 0;
+    overflow: hidden; }
+    form#search_form ol li label {
+      font-weight: normal; }
+      form#search_form ol li label span {
+        font-size: .9em;
+        padding: 0 0 0 3px; }
+      form#search_form ol li label abbr {
+        color: #999;
+        padding-left: 2px; }
+    form#search_form ol li input {
+      padding: 2px;
+      font-size: 1.1em; }
+    form#search_form ol li textarea {
+      float: none;
+      clear: both;
+      border: 1px solid #CCC; }
+    form#search_form ol li.numeric, form#search_form ol li.string, form#search_form ol li.boolean {
+      float: none;
+      clear: both;
+      overflow: hidden;
+      padding: 6px 3px;
+      border-top: 1px solid #F0F0F0; }
+    form#search_form ol li.numeric label, form#search_form ol li.string label {
+      float: left;
+      display: block;
+      width: 200px; }
+    form#search_form ol li.numeric input, form#search_form ol li.string input {
+      float: left;
+      width: 330px; }
+form#search_form input.refresh {
+  outline: none;
+  margin: 0 0 0 5px;
+  display: block;
+  width: 23px;
+  height: 23px;
+  text-indent: -10000px;
+  border: none;
+  background: transparent url(../../images/widgets/refresh.png) no-repeat left top;
+  cursor: pointer; }
+  form#search_form input.refresh:hover {
+    background-position: left -23px; }
+
+form.formtastic abbr, form.formtastic acronym {
+  border: 0 none;
+  font-variant: normal;
+  padding-left: 3px;
+  color: #006db7; }
+form.formtastic.standard fieldset {
+  display: block; }
+  form.formtastic.standard fieldset.inputs ol li {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #CCC;
+    padding: 6px 3px;
+    margin: 0; }
+    form.formtastic.standard fieldset.inputs ol li:hover {
+      background-color: #F0F0F0; }
+    form.formtastic.standard fieldset.inputs ol li label {
+      font-weight: normal;
+      width: 180px;
+      padding: 0 0 0 3px; }
+    form.formtastic.standard fieldset.inputs ol li.string input, form.formtastic.standard fieldset.inputs ol li.numeric input, form.formtastic.standard fieldset.inputs ol li.password input {
+      width: 394px;
+      padding: 4px 4px;
+      outline: none;
+      font-size: 1.1em; }
+    form.formtastic.standard fieldset.inputs ol li.hidden {
+      display: none; }
+    form.formtastic.standard fieldset.inputs ol li.select select {
+      width: 400px;
+      outline: none; }
+    form.formtastic.standard fieldset.inputs ol li.boolean {
+      margin: 0; }
+      form.formtastic.standard fieldset.inputs ol li.boolean label {
+        width: auto;
+        padding-left: 188px; }
+    form.formtastic.standard fieldset.inputs ol li.text textarea {
+      width: 400px;
+      height: 140px; }
+    form.formtastic.standard fieldset.inputs ol li.error {
+      background: none;
+      border: none;
+      border-bottom: 1px solid #CCC; }
+      form.formtastic.standard fieldset.inputs ol li.error.string input, form.formtastic.standard fieldset.inputs ol li.error.string textarea, form.formtastic.standard fieldset.inputs ol li.error.numeric input, form.formtastic.standard fieldset.inputs ol li.error.numeric textarea, form.formtastic.standard fieldset.inputs ol li.error.password input, form.formtastic.standard fieldset.inputs ol li.error.password textarea, form.formtastic.standard fieldset.inputs ol li.error.text input, form.formtastic.standard fieldset.inputs ol li.error.text textarea {
+        border: 2px solid black;
+        border-color: #a01a00; }
+      form.formtastic.standard fieldset.inputs ol li.error label {
+        font-weight: bold; }
+    form.formtastic.standard fieldset.inputs ol li p.inline-errors {
+      display: none;
+      margin: 0;
+      margin-left: 188px;
+      color: #a01a00; }
+  form.formtastic.standard fieldset.buttons {
+    margin: 15px 0 0 0;
+    border: none;
+    padding-left: 188px; }
+form.formtastic.sidebar fieldset.inputs ol li {
+  border: none !important;
+  padding: 5px 0; }
+  form.formtastic.sidebar fieldset.inputs ol li.string input, form.formtastic.sidebar fieldset.inputs ol li.numeric input, form.formtastic.sidebar fieldset.inputs ol li.password input {
+    width: 290px; }
+  form.formtastic.sidebar fieldset.inputs ol li:hover {
+    background: none; }
+form.formtastic.sidebar fieldset.buttons {
+  margin: 5px 0 0 0;
+  padding-left: 0; }
+  form.formtastic.sidebar fieldset.buttons ol li input {
+    border: 1px solid black;
+    border-color: #9f0b00;
+    background-color: #c12d00;
+    color: white;
+    padding: 3px 5px; }
+
+div.errorExplanation {
+  border: 1px solid black;
+  border-color: #a01a00;
+  padding: 15px;
+  margin: 0 0 10px 0;
+  background-color: #f9ddd9; }
+  div.errorExplanation h2 {
+    color: #a01a00;
+    margin: 0 0 10px 0;
+    padding: 0; }
+  div.errorExplanation ul {
+    list-style-type: disc;
+    margin: 0 0 0 15px; }
+    div.errorExplanation ul li {
+      color: #a01a00;
+      padding: 3px; }
+
+label {
+  cursor: pointer; }
+
+form.filter {
+  float: none;
+  clear: both;
+  overflow: hidden;
+  margin: 0 0 20px 0; }
+  form.filter input.text {
+    font-size: 1.1em;
+    padding: 5px;
+    margin: 0 6px 0 0;
+    width: 230px;
+    border: 1px solid #CCC;
+    float: left; }
+    form.filter input.text.weak, form.filter input.text.watermark {
+      color: #999; }
+  form.filter input.submit {
+    font-size: 1.1em !important;
+    border: 1px solid black !important;
+    border-color: #005ca6 !important;
+    background-color: #006db7 !important;
+    color: white !important;
+    padding: 4px 6px !important;
+    float: left !important;
+    cursor: hand; }
+
+div#sidebar_login_form {
+  margin: 0 0 20px 0; }
+
+
+#tooltip {
+  position: absolute;
+  z-index: 3000;
+  border: 1px solid #DDDDBB;
+  border-color: #000751;
+  background-color: #006db7;
+  padding: 5px;
+  opacity: 1;
+  color: white;
+  font-size: .7em;
+  max-width: 250px; }
+  #tooltip h3 {
+    margin: 0;
+    color: white;
+    font-weight: normal;
+    padding: 2px 4px; }
+  #tooltip div {
+    margin: 0; }
+
+@import url(star_ratings.css);
+body {
+  width: 20000px; }
+
+div.word_container {
+  margin-top: 300px;
+  float: left; }
+  div.word_container a.word {
+    font-size: 48px;
+    text-decoration: none; }
+    div.word_container a.word.odd {
+      color: #CCC; }
+    div.word_container a.word.even {
+      color: #333; }
+  div.word_container div.info {
+    float: none;
+    clear: both;
+    margin-left: 50px; }
+    div.word_container div.info span.info_pair {
+      display: block;
+      float: left;
+      color: #AAA;
+      margin-right: 20px; }
+      div.word_container div.info span.info_pair span {
+        float: left;
+        margin-right: 2px; }
+      div.word_container div.info span.info_pair p {
+        float: left;
+        color: #666; }
+    div.word_container div.info a.wordnik_site {
+      display: block;
+      float: left;
+      color: #C8B809;
+      text-decoration: none;
+      margin: 0 5px 0 0; }
+  div.word_container div.definition {
+    display: block;
+    float: none;
+    clear: both;
+    margin-left: 50px;
+    font-style: italic;
+    font-size: 16px;
+    color: #666; }
