@@ -7,11 +7,13 @@ namespace :import do
     words = File.read(File.join(RAILS_ROOT, "db/wordlists/wordcount.org.txt"))
     words.each do |word|
       parts = word.chomp.downcase.split(",")
-      word = Word.create!(:spelling => parts[0], :rank => parts[1])
+      word = Word.find_or_initialize_by_spelling(parts[0])
+      word.rank = parts[1]
+      word.save! if word.new_record?
       puts word.spelling
     end
   end
-    
+      
   task(:wordstats => :environment) do
     words = Word.find(:all, :include => [:wordstats])
     

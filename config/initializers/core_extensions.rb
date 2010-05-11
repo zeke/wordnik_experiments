@@ -283,3 +283,10 @@ class Array
   def get_sum; inject( nil ) { |sum,x| sum ? sum+x : x }; end;
   
 end
+
+module Enumerable
+  # http://snippets.dzone.com/posts/show/3838
+  def dups
+    inject({}) {|h,v| h[v]=h[v].to_i+1; h}.reject{|k,v| v==1}.keys
+  end
+end
