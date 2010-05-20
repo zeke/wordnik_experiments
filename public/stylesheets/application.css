@@ -4,8 +4,8 @@ form div.input {
     font-weight: normal; }
   form div.input select {
     width: 100%;
-    border: 1px solid #CCC;
-    margin: .2em 0; }
+    border: 1px solid #cccccc;
+    margin: 0.2em 0; }
 
 form#search_form ol {
   margin: 0;
@@ -17,10 +17,10 @@ form#search_form ol {
     form#search_form ol li label {
       font-weight: normal; }
       form#search_form ol li label span {
-        font-size: .9em;
+        font-size: 0.9em;
         padding: 0 0 0 3px; }
       form#search_form ol li label abbr {
-        color: #999;
+        color: #999999;
         padding-left: 2px; }
     form#search_form ol li input {
       padding: 2px;
@@ -28,13 +28,13 @@ form#search_form ol {
     form#search_form ol li textarea {
       float: none;
       clear: both;
-      border: 1px solid #CCC; }
+      border: 1px solid #cccccc; }
     form#search_form ol li.numeric, form#search_form ol li.string, form#search_form ol li.boolean {
       float: none;
       clear: both;
       overflow: hidden;
       padding: 6px 3px;
-      border-top: 1px solid #F0F0F0; }
+      border-top: 1px solid #f0f0f0; }
     form#search_form ol li.numeric label, form#search_form ol li.string label {
       float: left;
       display: block;
@@ -65,11 +65,11 @@ form.formtastic.standard fieldset {
   form.formtastic.standard fieldset.inputs ol li {
     width: 100%;
     display: block;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 1px solid #cccccc;
     padding: 6px 3px;
     margin: 0; }
     form.formtastic.standard fieldset.inputs ol li:hover {
-      background-color: #F0F0F0; }
+      background-color: #f0f0f0; }
     form.formtastic.standard fieldset.inputs ol li label {
       font-weight: normal;
       width: 180px;
@@ -95,7 +95,7 @@ form.formtastic.standard fieldset {
     form.formtastic.standard fieldset.inputs ol li.error {
       background: none;
       border: none;
-      border-bottom: 1px solid #CCC; }
+      border-bottom: 1px solid #cccccc; }
       form.formtastic.standard fieldset.inputs ol li.error.string input, form.formtastic.standard fieldset.inputs ol li.error.string textarea, form.formtastic.standard fieldset.inputs ol li.error.numeric input, form.formtastic.standard fieldset.inputs ol li.error.numeric textarea, form.formtastic.standard fieldset.inputs ol li.error.password input, form.formtastic.standard fieldset.inputs ol li.error.password textarea, form.formtastic.standard fieldset.inputs ol li.error.text input, form.formtastic.standard fieldset.inputs ol li.error.text textarea {
         border: 2px solid black;
         border-color: #a01a00; }
@@ -157,10 +157,10 @@ form.filter {
     padding: 5px;
     margin: 0 6px 0 0;
     width: 230px;
-    border: 1px solid #CCC;
+    border: 1px solid #cccccc;
     float: left; }
     form.filter input.text.weak, form.filter input.text.watermark {
-      color: #999; }
+      color: #999999; }
   form.filter input.submit {
     font-size: 1.1em !important;
     border: 1px solid black !important;
@@ -174,66 +174,91 @@ form.filter {
 div#sidebar_login_form {
   margin: 0 0 20px 0; }
 
+a {
+  outline: none; }
 
-#tooltip {
-  position: absolute;
-  z-index: 3000;
-  border: 1px solid #DDDDBB;
-  border-color: #000751;
-  background-color: #006db7;
-  padding: 5px;
-  opacity: 1;
-  color: white;
-  font-size: .7em;
-  max-width: 250px; }
-  #tooltip h3 {
+div#words_container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px; }
+  div#words_container div#words {
+    width: 20000em;
+    position: absolute;
+    clear: both; }
+    div#words_container div#words div.word_container {
+      float: left; }
+      div#words_container div#words div.word_container a.word {
+        font-size: 48px;
+        text-decoration: none; }
+        div#words_container div#words div.word_container a.word.odd {
+          color: #cccccc; }
+        div#words_container div#words div.word_container a.word.even {
+          color: #333333; }
+      div#words_container div#words div.word_container div.info {
+        float: none;
+        clear: both;
+        margin-left: 50px; }
+        div#words_container div#words div.word_container div.info a {
+          text-decoration: none; }
+          div#words_container div#words div.word_container div.info a span.info_pair {
+            display: block;
+            float: left;
+            color: #666666;
+            margin-right: 20px; }
+            div#words_container div#words div.word_container div.info a span.info_pair span {
+              float: left;
+              margin-right: 2px; }
+              div#words_container div#words div.word_container div.info a span.info_pair span.label {
+                color: #aaaaaa; }
+        div#words_container div#words div.word_container div.info a.wordnik_site {
+          display: block;
+          float: left;
+          color: #c8b809;
+          text-decoration: none;
+          margin: 0 5px 0 0; }
+      div#words_container div#words div.word_container div.definition {
+        display: block;
+        float: none;
+        clear: both;
+        margin: 0 0 0 50px;
+        font-style: italic;
+        font-size: 16px;
+        color: #666666;
+        width: 500px; }
+        div#words_container div#words div.word_container div.definition p {
+          font-size: 13px;
+          margin: 0;
+          padding: 0 0 5px 0; }
+
+ul#jumper {
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 804px;
+  list-style: none;
+  float: none;
+  clear: both;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border: 1px solid #dddddd;
+  padding: 0; }
+  ul#jumper li {
+    float: left;
     margin: 0;
-    color: white;
-    font-weight: normal;
-    padding: 2px 4px; }
-  #tooltip div {
-    margin: 0; }
-
-@import url(star_ratings.css);
-body {
-  width: 20000px; }
-
-div.word_container {
-  margin-top: 300px;
-  float: left; }
-  div.word_container a.word {
-    font-size: 48px;
-    text-decoration: none; }
-    div.word_container a.word.odd {
-      color: #CCC; }
-    div.word_container a.word.even {
-      color: #333; }
-  div.word_container div.info {
-    float: none;
-    clear: both;
-    margin-left: 50px; }
-    div.word_container div.info span.info_pair {
+    padding: 0;
+    height: 10px; }
+    ul#jumper li a {
+      text-indent: 20000em;
       display: block;
-      float: left;
-      color: #AAA;
-      margin-right: 20px; }
-      div.word_container div.info span.info_pair span {
-        float: left;
-        margin-right: 2px; }
-      div.word_container div.info span.info_pair p {
-        float: left;
-        color: #666; }
-    div.word_container div.info a.wordnik_site {
-      display: block;
-      float: left;
-      color: #C8B809;
-      text-decoration: none;
-      margin: 0 5px 0 0; }
-  div.word_container div.definition {
-    display: block;
-    float: none;
-    clear: both;
-    margin-left: 50px;
-    font-style: italic;
-    font-size: 16px;
-    color: #666; }
+      width: 1px;
+      height: 100%; }
+      ul#jumper li a:hover {
+        background-color: #dddddd;
+        width: 2px; }
+      ul#jumper li a.open {
+        background-color: #c8b809 !important; }
+    ul#jumper li.active a {
+      background-color: #990000;
+      width: 2px; }

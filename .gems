@@ -1,5 +1,5 @@
 rails --version 2.3.5
-haml
+haml --version 3.0.0
 formtastic
 colored
 wordnik

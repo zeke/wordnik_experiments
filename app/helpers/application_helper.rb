@@ -1,20 +1,19 @@
 module ApplicationHelper
   
   def page_title
-    "Wordnik Experiments"
+    "Logophilia, a Wordnik browser"
   end
   
   def stylesheets
     screen = %w(blueprint_screen application)
-    # print = %w(print)
 		out = screen.map { |stylesheet| stylesheet_link_tag(stylesheet) }
-    # out << print.map { |stylesheet| stylesheet_link_tag(stylesheet, :media => 'print') }
     # TODO Add Print and IE stylesheets
     # out << "<!--[if lt IE 8]>" + stylesheet_link_tag('ie') + "<![endif]-->"
     out.flatten.join("\n")
   end
   
   def enable_typekit(kit_id)
+    return if offline_mode?
     "<script type=\"text/javascript\" src=\"http://use.typekit.com/#{kit_id}.js\"></script>
     <script type=\"text/javascript\">try{Typekit.load();}catch(e){}</script>"
   end
@@ -22,11 +21,25 @@ module ApplicationHelper
   # Be sure to load application.js last!
   def javascripts
     out = []
-    out << google_jquery(:local => offline_mode?)
-    out << google_jqueryui(:local => offline_mode?)
-    files = %w(application)
+    files = []
+    if offline_mode?
+      files << %w(jquery jquery-ui)
+    else
+      out << google_jquery
+      out << google_jqueryui
+    end
+    files << %w(jquery.tools.min.js application)
     out << javascript_include_tag(files.flatten)
-    out.join("\n")
+    out.flatten.join("\n")
+  end
+  
+  def nav
+    items = []
+    items << link_to("Lookups", words_path(:order_by => "lookup"))
+    items << link_to("Favorites", words_path(:order_by => "favorite"))
+    items << link_to("Lists", words_path(:order_by => "list"))
+    items << link_to("Comments", words_path(:order_by => "comment"))
+    content_tag(:ul, convert_to_list_items(items), :id => "nav")
   end
 
   def generate_chart(responses)    

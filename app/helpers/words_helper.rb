@@ -12,4 +12,19 @@ module WordsHelper
   #   end.join("\n")
   # end
   
+  def jumper(words)
+    items = words.map do |word|
+      content_tag(:li, link_to(word.spelling, "#word_container_#{word.id}"), :id => "jumper_#{word.id}")
+    end
+    content_tag(:ul, items.join("\n"), :id => "jumper")
+  end
+  
+# / %ul#jumper
+# /   - num_links = 20
+# /   - (0...num_links).each do |i|
+# /     - index = (i.to_f/num_links.to_f * @words.size.to_f).to_i
+# /     - logger.debug index.to_s.red_on_yellow
+# /     - word = @words[index]
+# /     %li= link_to(word.spelling, "#word_container_#{word.id}")
+      
 end

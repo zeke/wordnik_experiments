@@ -1,46 +1,97 @@
-body
-  width: 20000px
+$word_width = 500px
+$green = #C8B809
+$red = #990000
 
-div.word_container
-  margin-top: 300px
-  float: left
+a
+  outline: none
 
-  a.word
-    font-size: 48px
-    text-decoration: none
-    &.odd
-      color: #CCC
-    &.even
-      color: #333
-
-  div.info
-    float: none
+div#words_container
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 400px
+  div#words
+    width: 20000em
+    position: absolute
     clear: both  
-    margin-left: 50px
-    span.info_pair
-      display: block
+    div.word_container
       float: left
-      color: #AAA
-      margin-right: 20px
-      span
-        float: left
-        margin-right: 2px
-      p 
-        float: left
-        color: #666
-    a.wordnik_site
-      display: block
-      float: left
-      color: #C8B809
-      text-decoration: none
-      margin: 0 5px 0 0
 
-  div.definition
-    display: block
-    float: none
-    clear: both
-    margin-left: 50px
-    font-style: italic
-    font-size: 16px
-    color: #666
-    
+      a.word
+        font-size: 48px
+        text-decoration: none
+        &.odd
+          color: #CCC
+        &.even
+          color: #333
+
+      div.info
+        float: none
+        clear: both  
+        margin-left: 50px
+        a
+          text-decoration: none
+          span.info_pair
+            display: block
+            float: left
+            color: #666
+            margin-right: 20px
+            span
+              float: left
+              margin-right: 2px
+              &.label
+                color: #AAA
+          
+        a.wordnik_site
+          display: block
+          float: left
+          color: $green
+          text-decoration: none
+          margin: 0 5px 0 0
+
+      div.definition
+        display: block
+        float: none
+        clear: both
+        margin: 0 0 0 50px
+        font-style: italic
+        font-size: 16px
+        color: #666
+        width: $word_width
+        p
+          font-size: 13px
+          margin: 0
+          padding: 0 0 5px 0
+          
+ul#jumper
+  display: block
+  margin: 0
+  margin-left: auto
+  margin-right: auto
+  width: 804px
+  list-style: none
+  float: none
+  clear: both
+  overflow: hidden
+  background-color: #F0F0F0
+  border: 1px solid #DDD
+  padding: 0
+  li
+    float: left
+    margin: 0
+    padding: 0
+    height: 10px
+    a
+      text-indent: 20000em
+      display: block
+      width: 1px
+      height: 100%
+      &:hover
+        background-color: #DDD
+        width: 2px
+      &.open
+        background-color: $green !important
+    &.active
+      a
+        background-color: $red
+        width: 2px

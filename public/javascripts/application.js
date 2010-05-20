@@ -11,6 +11,10 @@ $(document).ready(function(){
 		$(this).css("height", $(this).height());
 	});
 	
+	$(".scrollable").scrollable({items: '#words', mousewheel: true}).navigator({
+		navi:'ul#jumper'
+	});
+	
 });
 
 function highlightWord(id, spelling) {
@@ -18,8 +22,11 @@ function highlightWord(id, spelling) {
 	var info = $('#info_'+id)
 	var link = $('#word_container_'+id+' a:first')
 	var definition = $('#definition_'+id)
+	var jumper = $('#jumper_'+id+' a:first')
 
 	if (container.hasClass('active')) {
+		
+		// Hide word info
 		definition.fadeToggle();
 		info.slideToggle("fast", function() {
 		  link.animate({
@@ -30,6 +37,8 @@ function highlightWord(id, spelling) {
 		});
 
 	} else {
+		
+		// Show word info
 	  link.animate({
 			color: '#C8B809',
 			paddingLeft: '50',
@@ -40,11 +49,23 @@ function highlightWord(id, spelling) {
 	  });
 		
 	}
+	
+	// These things happen whether opening or closing..
 	container.toggleClass('active');
+	jumper.toggleClass('open');
 
+	if (definition.html == "") {
+		alert("definition is blank!")
+	} else {
+		alert("definition is not blank!")
+	}
+	
 	json_url = 'http://api.wordnik.com/api/word.json/' + spelling + '/definitions?api_key=b39ee8d5f05d0f566a0080b4c310ceddf5dc5f7606a616f53&callback=?'
 	$.getJSON(json_url, function(data) {
-	  definition.html(data[0].text);
+		defs = jQuery.map(data, function(datum, i){
+			return "<p>" + datum.text + "</p>";
+	    });
+	  definition.html(defs.join("\n"));
 	});
 
 }

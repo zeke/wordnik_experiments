@@ -1,0 +1,12 @@
+%div.word_container{:id => "word_container_#{word.id}"}
+  - css = ["word", cycle("even", "odd")]
+  = link_to_function(word.spelling, "highlightWord('#{word.id}', '#{word.spelling}')", :class => css.join(" "))
+
+  %div.info.inactive{:id => "info_#{word.id}"}
+    = link_to("&oplus;", "http://www.wordnik.com/words/#{word.spelling}", :class => "wordnik_site", :target => "_blank")
+    = link_to(info_pair("Lookups", word.lookup_count), "#")
+    = link_to(info_pair("Favorites", word.favorite_count), "#")
+    = link_to(info_pair("Lists", word.list_count), "#")
+    = link_to(info_pair("Comments", word.comment_count), "#")
+
+  %div.inactive{:id => "definition_#{word.id}", :class => "definition"}
