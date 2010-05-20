@@ -2,8 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :words, :only => [:index]  
 
-  # map.root :controller => "static"
-  map.root :controller => :words
+  map.root :controller => "static"
   
   # map.search '/:q', :controller => 'static', :action => 'index'
 

@@ -177,6 +177,53 @@ div#sidebar_login_form {
 a {
   outline: none; }
 
+div.intro {
+  margin: 100px 0 0 20px;
+  width: 400px; }
+  div.intro p {
+    font-size: 24px;
+    color: #777777; }
+    div.intro p a {
+      color: #444444; }
+      div.intro p a.loud {
+        color: #c8b809;
+        text-decoration: none; }
+        div.intro p a.loud:hover {
+          text-decoration: underline; }
+
+div#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+  float: none;
+  clear: both;
+  overflow: hidden; }
+  div#footer ul {
+    float: left;
+    margin: 10px 0 10px 15px;
+    padding: 0;
+    list-style: none; }
+    div#footer ul li {
+      float: left;
+      margin: 0;
+      padding: 3px 6px;
+      color: #cccccc;
+      border-right: 1px solid #444444; }
+      div#footer ul li.first {
+        padding-left: 0;
+        border-right: none; }
+      div#footer ul li.last {
+        padding-right: 0;
+        border-right: none; }
+      div#footer ul li a {
+        color: #999999;
+        text-decoration: none; }
+        div#footer ul li a.active, div#footer ul li a:hover {
+          color: #c8b809;
+          text-decoration: underline; }
+
 div#words_container {
   position: relative;
   overflow: hidden;
@@ -189,7 +236,7 @@ div#words_container {
     div#words_container div#words div.word_container {
       float: left; }
       div#words_container div#words div.word_container a.word {
-        font-size: 48px;
+        font-size: 36px;
         text-decoration: none; }
         div#words_container div#words div.word_container a.word.odd {
           color: #cccccc; }

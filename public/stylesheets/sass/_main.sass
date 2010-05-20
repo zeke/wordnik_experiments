@@ -5,6 +5,55 @@ $red = #990000
 a
   outline: none
 
+div.intro
+  margin: 100px 0 0 20px
+  width: 400px
+  p
+    font-size: 24px
+    color: #777
+    a
+      color: #444
+      &.loud
+        color: $green
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+
+div#footer
+  position: absolute
+  width: 100%
+  bottom: 0
+  left: 0
+  background-color: #333
+  float: none
+  clear: both
+  overflow: hidden
+
+  ul
+    float: left
+    margin: 10px 0 10px 15px
+    padding: 0
+    list-style: none
+    li
+      float: left
+      margin: 0
+      padding: 3px 6px
+      color: #CCC 
+      border-right: 1px solid #444
+      &.first
+        padding-left: 0
+        border-right: none
+      &.last
+        padding-right: 0
+        border-right: none
+      a
+        color: #999
+        text-decoration: none
+        &.active, &:hover
+          color: $green
+          text-decoration: underline
+    
+
 div#words_container
   position: relative
   overflow: hidden
@@ -18,7 +67,7 @@ div#words_container
       float: left
 
       a.word
-        font-size: 48px
+        font-size: 36px
         text-decoration: none
         &.odd
           color: #CCC

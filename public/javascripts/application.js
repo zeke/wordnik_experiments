@@ -53,12 +53,6 @@ function highlightWord(id, spelling) {
 	// These things happen whether opening or closing..
 	container.toggleClass('active');
 	jumper.toggleClass('open');
-
-	if (definition.html == "") {
-		alert("definition is blank!")
-	} else {
-		alert("definition is not blank!")
-	}
 	
 	json_url = 'http://api.wordnik.com/api/word.json/' + spelling + '/definitions?api_key=b39ee8d5f05d0f566a0080b4c310ceddf5dc5f7606a616f53&callback=?'
 	$.getJSON(json_url, function(data) {

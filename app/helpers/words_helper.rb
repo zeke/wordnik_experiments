@@ -12,6 +12,13 @@ module WordsHelper
   #   end.join("\n")
   # end
   
+  def filter_summary
+    out = []
+    out << "Words"
+    out << "containing &lsquo;#{params[:q]}&rsquo;" if params[:q].present?
+    out << "sorted by "
+  end
+  
   def jumper(words)
     items = words.map do |word|
       content_tag(:li, link_to(word.spelling, "#word_container_#{word.id}"), :id => "jumper_#{word.id}")

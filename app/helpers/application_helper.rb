@@ -33,13 +33,14 @@ module ApplicationHelper
     out.flatten.join("\n")
   end
   
-  def nav
+  def sort_menu
     items = []
-    items << link_to("Lookups", words_path(:order_by => "lookup"))
-    items << link_to("Favorites", words_path(:order_by => "favorite"))
-    items << link_to("Lists", words_path(:order_by => "list"))
-    items << link_to("Comments", words_path(:order_by => "comment"))
-    content_tag(:ul, convert_to_list_items(items), :id => "nav")
+    items << "Sort by: "
+    items << link("Lookups", words_path(:order_by => "lookup"))
+    items << link("Favorites", words_path(:order_by => "favorite"))
+    items << link("Lists", words_path(:order_by => "list"))
+    items << link("Comments", words_path(:order_by => "comment"))
+    content_tag(:ul, convert_to_list_items(items), :id => "sort_menu")
   end
 
   def generate_chart(responses)    
