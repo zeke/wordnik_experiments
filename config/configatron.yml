@@ -1,0 +1,11 @@
+sort_types:
+  - 'lookup'
+  - 'favorite'
+  - 'list'
+  - 'comment'
+unwanted_params:
+  - 'action'
+  - 'controller'
+  - 'commit'
+  - 'location'
+  - 'ltkn'

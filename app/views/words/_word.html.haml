@@ -7,6 +7,5 @@
     = link_to(info_pair("Favorites", word.favorite_count), "#")
     = link_to(info_pair("Lists", word.list_count), "#")
     = link_to(info_pair("Comments", word.comment_count), "#")
-    = link_to("View on wordnik.com", "http://www.wordnik.com/words/#{word.spelling}", :class => "wordnik_site", :target => "_blank")
 
-  %div.inactive{:id => "definition_#{word.id}", :class => "definition"}
+  %ol.inactive{:id => "definition_#{word.id}", :class => "definition"}

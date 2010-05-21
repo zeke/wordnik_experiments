@@ -1,15 +1,23 @@
-
-
-=# filter_summary
-
+#header
+  - form_tag('/words', :method => :get, :id => "filter") do
+    = text_field_tag :q, params[:q], :class => "text tk-museo-slab", :placeholder => "Enter a word or part of a word.."
+    
+  = sort_direction_menu
+  = sort_menu
+  
 %div#words_container.scrollable
   %div#words
     = render :partial => "word", :collection => @words
-        
-/ <a class="prev browse left">prev</a>
-/ <a class="next browse right">next</a>
 
-= jumper @words
+= filter_summary
 
-#footer
-  = sort_menu
+%div#colophon
+  Built by
+  = link_to("Zeke Sikelianos", "http://zeke.sikelianos.com") + "."
+  Powered by
+  = link_to("Wordnik", "http://wordnik.com") + ","
+  = link_to("Heroku", "http://heroku.com") + ","
+  and
+  = link_to("Github", "http://github.com") + "."
+
+=# render_flash_messages

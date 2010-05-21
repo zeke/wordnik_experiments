@@ -1,70 +1,73 @@
-$word_width = 500px
-$green = #C8B809
-$red = #990000
-
+body
+  font-family: Georgia
+  width: 100%
+  overflow-y: hidden
+  
 a
   outline: none
 
 div.intro
   margin: 100px 0 0 20px
-  width: 400px
+  width: 600px
   p
     font-size: 24px
     color: #777
+    b
+      color: black
     a
       color: #444
-      &.loud
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      font-size: 18px
+      a
         color: $green
         text-decoration: none
         &:hover
           text-decoration: underline
 
-div#footer
+          
+div#filter_summary
+  font-size: 14px
+  color: $green
   position: absolute
-  width: 100%
-  bottom: 0
-  left: 0
-  background-color: #333
-  float: none
-  clear: both
-  overflow: hidden
+  bottom: 30px
+  left: 15px
+  font-style: italic
 
-  ul
-    float: left
-    margin: 10px 0 10px 15px
-    padding: 0
-    list-style: none
-    li
-      float: left
-      margin: 0
-      padding: 3px 6px
-      color: #CCC 
-      border-right: 1px solid #444
-      &.first
-        padding-left: 0
-        border-right: none
-      &.last
-        padding-right: 0
-        border-right: none
-      a
-        color: #999
-        text-decoration: none
-        &.active, &:hover
-          color: $green
-          text-decoration: underline
-    
+div#colophon
+  font-size: 12px
+  color: #888
+  position: absolute
+  bottom: 30px
+  right: 15px
+  font-style: italic
+  a
+    color: #666
+    &:hover
+      color: $green
 
 div#words_container
+  // float: left
   position: relative
-  overflow: hidden
   width: 100%
-  height: 400px
+  overflow: auto
+  overflow-y: hidden
+  height: 500px
+  margin: 0
+  padding: 20px 0 0 0
   div#words
-    width: 20000em
+    width: 1000000px
     position: absolute
-    clear: both  
+    clear: both 
     div.word_container
       float: left
+      &:first-child
+        padding-left: 15px
+      &:last-child
+        padding-right: 15px
 
       a.word
         font-size: 36px
@@ -98,19 +101,30 @@ div#words_container
           text-decoration: none
           margin: 0 5px 0 0
 
-      div.definition
+      ol.definition
         display: block
         float: none
         clear: both
         margin: 0 0 0 50px
-        font-style: italic
-        font-size: 16px
-        color: #666
+        padding: 10px 0 0 0
         width: $word_width
-        p
+        list-style: none
+        li
+          font-style: italic
           font-size: 13px
-          margin: 0
-          padding: 0 0 5px 0
+          color: #555
+          padding: 4px
+          border-bottom: 1px solid #DDD
+          &:last-child
+            border: none
+          a
+            color: $green
+            font-style: italic
+            font-size: .9em
+            text-decoration: none
+            &:hover
+              text-decoration: underline
+          
           
 ul#jumper
   display: block
@@ -144,3 +158,57 @@ ul#jumper
       a
         background-color: $red
         width: 2px
+        
+div#header
+  width: 100%
+  background-color: #333
+  float: none
+  clear: both
+  overflow: hidden
+  border-bottom: 8px solid #000
+  border-bottom-color: $green
+  
+  form#filter
+    margin: 10px 0 10px 15px
+    float: left
+    input.text
+      // background-color: #444
+      border-top: 1px solid #111
+      border-right: 1px solid #666
+      border-bottom: 1px solid #666
+      border-left: 1px solid #111
+      background: none
+      // border: none
+      padding: 5px
+      font-size: 18px
+      color: white
+      outline: none
+      &.watermark
+        color: #999
+
+  ul
+    float: right
+    margin: 28px 15px 0 15px
+    padding: 0
+    list-style: none
+    li
+      float: left
+      margin: 0
+      padding: 3px 6px
+      color: #666
+      font-style: italic
+      border-right: 1px solid #444
+      &.first
+        padding-left: 0
+        padding-right: 0
+        border-right: none
+      &.last
+        padding-right: 0
+        border-right: none
+      a
+        font-style: normal
+        color: #888
+        text-decoration: none
+        &.active, &:hover
+          color: #DDD
+          text-decoration: underline

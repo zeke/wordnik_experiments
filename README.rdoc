@@ -1,3 +1,11 @@
 == Word Timeline
 
 A 200-year timeline that charts the changing frequency of English word usage. Leverages the Wordnik and Google Charts APIs
+
+== To Do
+
+* Set cookies for sorting params
+* comma-separated queries
+* list queries
+* end-of-div autopagination
+* adaptive scroll or slider for word container

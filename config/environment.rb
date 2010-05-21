@@ -24,6 +24,9 @@ Rails::Initializer.run do |config|
   config.gem 'colored'
   config.gem 'wordnik'
   config.gem 'hpricot'
+  config.gem 'configatron'
+  config.gem "will_paginate", :version => "2.3.12"
+  config.gem 'searchlogic'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

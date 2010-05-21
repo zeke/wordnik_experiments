@@ -1,9 +1,15 @@
 %div.intro
 
   %p
-    Logophilia helps you discover trends on
+    %b Logophilia
+    helps you discover trends on
     = link_to("wordnik.com", "http://wordnik.com") + "."
     You can browse words by how frequently they're looked up, 
-    discussed, favorited, and listed.
-    
-  %p= link_to("Go &rarr;", words_path, :class => "loud")
+    discussed, favorited, and listed. Here are some ideas to
+    get you started..
+
+  %ul
+    %li.first= link_to("&rarr; Words that start with 'fun'", words_path(:q => "fun*"))    
+    %li= link_to("&rarr; Words that end in 'able'", words_path(:q => "*able"))
+    %li= link_to("&rarr; Words containing 'ding'", words_path(:q => "ding"))
+    %li.last= link_to("&rarr; Words in a Wordnik list (e.g. 'bad-guys')", words_path(:q => "list:bad-guys"))

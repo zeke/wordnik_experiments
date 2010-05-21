@@ -26,5 +26,42 @@ namespace :cleanup do
     end
     
   end
+  
+  desc "Remove words that don't match Word.regex"
+  task(:nonwords => :environment) do
+    Word.missing_wordstats.each do |word|
+      if (word.spelling =~ Word.regex).nil?
+        puts word.spelling
+        word.destroy
+      end
+    end
+  end
+
+  desc "Repair botched wordstats"
+  task(:botched_wordstats => :environment) do
+    Wordstat.all.each do |wordstat|
+      wordstat.lookup_count = 0 if wordstat.lookup_count.nil?
+      if wordstat.changed?
+        wordstat.save 
+        puts wordstat.id
+      else
+        puts "."
+      end
+    end
+  end
+
+
+  desc "Remove orphaned wordstats"
+  task(:orphaned_wordstats => :environment) do
+    Wordstat.find(:all, :include => [:word]).each do |wordstat|
+      if wordstat.word.nil?
+        wordstat.destroy 
+        puts wordstat.id
+      else
+        puts "."
+      end
+    end
+  end
+
 
 end

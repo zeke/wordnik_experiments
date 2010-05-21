@@ -1,8 +1,42 @@
 class WordsController < ApplicationController
 
   def index
-    order_by = params[:order_by].present? ? "#{params[:order_by]}_count" : "lookup_count"
-    @words = Word.find(:all, :limit => 800, :order => ["#{order_by} DESC"])
+    params[:order_by] ||= "lookup_count"
+    params[:direction] ||= "desc"
+
+    pagination_params = {:page => params[:page], :order => "#{params[:order_by]} #{params[:direction]}", :per_page => 250}
+
+    if params[:q]
+      q = params[:q].dup
+      if q.starts_with?("*")
+        q.gsub!("*", "")
+        @words = Word.spelling_ends_with(q).having_wordstats.paginate(pagination_params)
+        
+      elsif q.ends_with?("*")
+        q.gsub!("*", "")
+        @words = Word.spelling_begins_with(q).having_wordstats.paginate(pagination_params)
+        
+      elsif q.starts_with?("list:")
+        begin
+          q.gsub!("list:", "")
+          url = "http://www.wordnik.com/lists/#{q}.xml"
+          response = HTTParty.get(url)
+          @list_title = response['rss']['channel']['title'].sub("Wordnik.com: ", "")
+          list = response['rss']['channel']['item'].map{ |item| item['title'] }
+          # raise list.inspect
+          @words = Word.in_list(list).having_wordstats.paginate(pagination_params)
+        rescue
+          @words = []
+          @list_title = q
+          # flash[:error] = "Sorry, the #{q} list could not be found."
+        end
+      else
+        @words = Word.spelling_like(q).having_wordstats.paginate(pagination_params)
+      end
+      
+    else
+      @words = Word.having_wordstats.paginate(pagination_params)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
