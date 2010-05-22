@@ -1,11 +1,9 @@
 == Word Timeline
 
-A 200-year timeline that charts the changing frequency of English word usage. Leverages the Wordnik and Google Charts APIs
+Logophilia helps you discover trends on wordnik.com. You can browse words by how frequently they're looked up, discussed, favorited, and listed.
 
 == To Do
 
 * Set cookies for sorting params
-* comma-separated queries
-* list queries
+* comma-separated queries for comparing specific words
 * end-of-div autopagination
-* adaptive scroll or slider for word container
