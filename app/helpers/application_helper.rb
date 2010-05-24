@@ -31,7 +31,7 @@ module ApplicationHelper
     # files << %w(jquery.tools.min.js jquery.watermark application)
     # jquery.dimensions functionality is allegedly rolled into jquery 1.4.2..
     # http://plugins.jquery.com/node/13691
-    files << %w(jquery.mousewheel.min jScrollHorizontalPane jquery.watermark application)
+    files << %w(jquery.mousewheel.min jScrollHorizontalPane jquery.watermark jquery.google-analytics application)
     out << javascript_include_tag(files.flatten)
     out.flatten.join("\n")
   end  

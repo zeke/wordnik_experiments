@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	
+	// Google Analytics
+	$.trackPage('UA-16591426-1')
+	
 	// http://github.com/citrusbyte/jquery-watermark
 	$("form#filter").watermark();
 	
