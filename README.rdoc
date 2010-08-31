@@ -5,5 +5,5 @@ Logophilia helps you discover trends on wordnik.com. You can browse words by how
 == To Do
 
 * Set cookies for sorting params
-* comma-separated queries for comparing specific words
-* end-of-div autopagination
+* Support comma-separated queries for comparing specific words
+* Add end-of-div autopagination
