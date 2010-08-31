@@ -7,5 +7,3 @@ Logophilia helps you discover trends on wordnik.com. You can browse words by how
 * Set cookies for sorting params
 * comma-separated queries for comparing specific words
 * end-of-div autopagination
-* Set up a stats scraper for http://www.wordnik.com/favorites.xml
-* Set up a stats scraper for http://www.wordnik.com/lookups.xml
