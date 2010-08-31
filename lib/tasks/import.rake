@@ -22,26 +22,30 @@ namespace :import do
       puts word.spelling
     end
   end
-  
-  desc "Import recent wordnik favorites"
-  task(:wordnik_favorites => :environment) do    
-    puts "\n\nImporting recent wordnik favorites"
-    doc = Nokogiri::XML(open('http://www.wordnik.com/favorites.xml'))
-    doc.search('title').each do |title|
-      word = Word.find_or_create_by_spelling(title.inner_html.chomp.downcase)
-      puts word.spelling
-    end
-  end  
-  
-  desc "Import recent wordnik lookups"
-  task(:wordnik_lookups => :environment) do    
-    puts "\n\nImporting recent wordnik lookups"
-    doc = Nokogiri::XML(open('http://www.wordnik.com/lookups.xml'))
-    doc.search('title').each do |title|
-      word = Word.find_or_create_by_spelling(title.inner_html.chomp.downcase)
-      puts word.spelling
-    end
-  end  
 
-  
+  desc "Import recent wordnik favorites, lookups, and pronunciations"
+  task(:wordnik_recent => :environment) do    
+
+    puts "\n\nFavorites"
+    doc = Nokogiri::XML(open('http://www.wordnik.com/favorites.xml'))
+    doc.search('item/title').each do |title|
+      word = Word.find_or_create_by_spelling(title.inner_html.chomp.downcase)
+      puts word.spelling
+    end
+    
+    puts "\n\nLookups"
+    doc = Nokogiri::XML(open('http://www.wordnik.com/lookups.xml'))
+    doc.search('item/title').each do |title|
+      word = Word.find_or_create_by_spelling(title.inner_html.chomp.downcase)
+      puts word.spelling
+    end
+    
+    puts "\n\nPronunciations"
+    doc = Nokogiri::XML(open('http://www.wordnik.com/pronunciations.xml'))
+    doc.search('item/title').each do |title|
+      word = Word.find_or_create_by_spelling(title.inner_html.chomp.downcase)
+      puts word.spelling
+    end
+  end
+
 end
