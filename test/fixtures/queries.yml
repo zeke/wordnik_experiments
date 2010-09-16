@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  q: MyString
+  result_count: 1
+  ip: MyString
+
+two:
+  q: MyString
+  result_count: 1
+  ip: MyString

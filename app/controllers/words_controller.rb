@@ -37,6 +37,8 @@ class WordsController < ApplicationController
     else
       @words = Word.having_wordstats.paginate(pagination_params)
     end
+    
+    Query.create(:q => params[:q], :result_count => @words.size, :ip => request.remote_ip)
 
     respond_to do |format|
       format.html # index.html.erb
