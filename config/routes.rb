@@ -2,8 +2,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :words, :only => [:index]  
 
+  map.recent_queries "/recent_queries.:format", :controller => "static", :action => "recent_queries"
   map.root :controller => "static"
-  
+    
   # map.search '/:q', :controller => 'static', :action => 'index'
 
   # See how all your routes lay out with "rake routes"

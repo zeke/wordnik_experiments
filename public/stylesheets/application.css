@@ -92,6 +92,14 @@ div.intro {
         text-decoration: none; }
         div.intro ul li a:hover {
           text-decoration: underline; }
+  div.intro p.recent_queries {
+    font-size: 14px;
+    color: #777777; }
+    div.intro p.recent_queries a {
+      color: #555555;
+      text-decoration: underline; }
+      div.intro p.recent_queries a:hover {
+        color: #222222; }
 
 div#filter_summary {
   font-size: 14px;

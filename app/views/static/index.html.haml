@@ -13,3 +13,8 @@
     %li= link_to("&rarr; Words that end in 'able'", words_path(:q => "*able"))
     %li= link_to("&rarr; Words containing 'ding'", words_path(:q => "ding"))
     %li.last= link_to("&rarr; Words in a Wordnik list (e.g. 'bad-guys')", words_path(:q => "list:bad-guys"))
+    
+  
+  %p.recent_queries
+    Recent queries: 
+    = recent_queries

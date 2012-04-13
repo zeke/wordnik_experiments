@@ -35,6 +35,12 @@ module ApplicationHelper
     out << javascript_include_tag(files.flatten)
     out.flatten.join("\n")
   end  
+
+  def recent_queries
+    @recent_queries.map do |query|
+      link_to(query.q, words_path(:q => query.q))
+    end.join(", ")
+  end
   
     
 end
